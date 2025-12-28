@@ -32,6 +32,7 @@ import java.awt.Dialog;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
 import java.awt.Insets;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -380,5 +381,10 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
             ret = getAWTComponent().isFocusable() && getAWTComponent().getFocusableWindowState();
         }
         return ret;
+    }
+
+    @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

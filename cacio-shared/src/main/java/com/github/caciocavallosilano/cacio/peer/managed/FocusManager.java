@@ -33,7 +33,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.github.caciocavallosilano.cacio.peer.CacioComponent;
-import sun.security.action.GetPropertyAction;
+import com.github.caciocavallosilano.cacio.action.GetPropertyAction;
 
 public class FocusManager {
 

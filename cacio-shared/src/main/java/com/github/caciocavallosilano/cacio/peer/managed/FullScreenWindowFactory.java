@@ -38,7 +38,7 @@ import com.github.caciocavallosilano.cacio.peer.CacioEventSource;
 import com.github.caciocavallosilano.cacio.peer.PlatformToplevelWindow;
 import com.github.caciocavallosilano.cacio.peer.PlatformWindow;
 import com.github.caciocavallosilano.cacio.peer.PlatformWindowFactory;
-import sun.security.action.GetPropertyAction;
+import com.github.caciocavallosilano.cacio.action.GetPropertyAction;
 
 public class FullScreenWindowFactory implements PlatformWindowFactory {
 
