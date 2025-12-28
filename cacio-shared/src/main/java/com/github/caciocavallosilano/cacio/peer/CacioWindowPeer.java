@@ -383,7 +383,7 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
         return ret;
     }
 
-    @Override
+    //@Override
     public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
