@@ -27,10 +27,7 @@ public class CTCPreloadAgent {
             defaultHeadlessField.set(null, Boolean.FALSE);
             headlessField.set(null,Boolean.FALSE);
 
-            Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
-            Field smf = smfCls.getDeclaredField("instance");
-            smf.setAccessible(true);
-            smf.set(null, null);
+            if(Runtime.version().feature() < 25) removeSurfaceFactory();
 
             setFinalStatic(ge, new CTCGraphicsEnvironment());
 
@@ -43,6 +40,13 @@ public class CTCPreloadAgent {
         }
 
         System.setProperty("swing.defaultlaf", MetalLookAndFeel.class.getName());
+    }
+
+    private static void removeSurfaceFactory() throws Exception {
+        Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
+        Field smf = smfCls.getDeclaredField("instance");
+        smf.setAccessible(true);
+        smf.set(null, null);
     }
     // https://stackoverflow.com/a/71465198
     public static void setFinalStatic(Field field, Object value) throws Exception{
