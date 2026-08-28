@@ -31,7 +31,6 @@ import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 import java.awt.PrintJob;
-import java.awt.Robot;
 import java.awt.SystemTray;
 import java.awt.TrayIcon;
 import java.awt.Window;
@@ -66,7 +65,7 @@ public class CTCToolkit extends CacioToolkit {
         if (platformWindowFactory == null) {
           CTCScreen screen = CTCScreen.getInstance();
           CTCEventSource eventSource = CTCEventSource.getInstance();
-          platformWindowFactory = new FullScreenWindowFactory(screen, eventSource);
+          platformWindowFactory = new NotifierWindowFactory(screen, eventSource);
         }
         return platformWindowFactory;
     }
